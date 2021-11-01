@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  start_day: 2021-11-01
+  end_day: 2021-11-01
+  update_at: 2021-11-01 06:53:14
+  memo: MyString
+  all_day: false
+  alert_success: MyString
+  aleart_delete: MyString
+
+two:
+  title: MyString
+  start_day: 2021-11-01
+  end_day: 2021-11-01
+  update_at: 2021-11-01 06:53:14
+  memo: MyString
+  all_day: false
+  alert_success: MyString
+  aleart_delete: MyString

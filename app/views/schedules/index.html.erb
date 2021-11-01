@@ -1,0 +1,53 @@
+<div class="main_container">
+  <div class="information">
+    <h2>スケジュール一覧</h2>
+  </div>
+
+  <% if flash[:success] %>
+    <p class="alert success"><%= flash[:success] %></p>
+  <% end %>
+  
+  <% if flash[:delete] %>
+    <p class="alert delete"><%= flash[:delete] %></p>
+  <% end %>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>タイトル</th>
+        <th>開始日</th>
+        <th>終了日</th>
+        <th>終日</th>
+        <th>スケジュール更新日時</th>
+        <th>確認</th>
+        <th>編集</th>
+        <th>削除</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @scdls.each do |scdl| %>
+        <tr>
+          <td><%= scdl.id %></td>
+          <td><%= scdl.title %></td>
+          <td><%= l scdl.start_at, format: :short %></td>
+          <td><%= l scdl.end_at, format: :short %></td>
+          <td>
+          <% if scdl.is_all_day == true %>
+          ○
+          <% else scdl .is_all_day == false %>
+          <% end %>
+          </td>
+          <td><%=  l scdl.updated_at %></td>
+          <td><%= link_to "確認", scdl%></td>
+          <td><%= link_to "編集", [:edit, scdl]%></td>
+          <td><%= link_to "削除", scdl, method: :delete, data: {confirm: "本当に削除しますか？"} %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <p><%= link_to "スケジュール新規登録", :new_schedule %></p>
+
+</div>
