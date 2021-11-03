@@ -5,7 +5,7 @@ class SchedulesController < ApplicationController
 
   def new
     @scdls = Scdl.all
-    @scdls = Scdl.new
+    @scdl = Scdl.new
   end
 
   def create
