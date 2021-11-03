@@ -9,7 +9,7 @@
 
   <%= render "shared/error", obj: @scdl %>
   
-  <%= form_with model:@schedule do |f| %>
+  <%= form_with model:@scdl do |f| %>
     <table>
       <tr>
         <th><%= f.label :title,"タイトル" %></th>
@@ -39,7 +39,7 @@
     <div>
       <ul>
         <li><%= f.submit "スケジュールを新規登録する" %></li>
-        <li><%= link_to "スケジュール一覧に戻る", :schedules %></li>
+        <li><%= link_to "スケジュール一覧に戻る", new_schedule_path %></li>
       </ul>
     </div>
   <% end %>

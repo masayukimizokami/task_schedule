@@ -2,7 +2,6 @@ class Scdl < ApplicationRecord
     validates :title, presence: true
     validates :start_day, presence: true
     validates :end_day, presence: true
-  
     validate :date_before_finish
       def date_before_finish
         return if end_day.blank?

@@ -5,11 +5,11 @@ class SchedulesController < ApplicationController
 
   def new
     @scdls = Scdl.all
-    @scdl = Scdl.new
+    @scdls = Scdl.new
   end
 
   def create
-    @scdl = Scdl.new(params.require(:scdl).permit(:title, :start_day, :end_day, :all_day, :memo))
+    @scdls = Scdl.new(params.require(:scdl).permit(:title, :start_day, :end_day, :all_day, :memo))
     if @scdl.save
       flash[:success]= "スケジュールを登録しました"
       redirect_to :schedules
@@ -34,7 +34,7 @@ class SchedulesController < ApplicationController
     @scdl = Scdl.find(params[:id])
     if @scdl.update(params.require(:scdl).permit(:title, :start_day, :end_aday, :all_day, :memo))
       flash[:success] = "スケジュールを更新しました"
-      redirect_to :scdls
+      redirect_to :schedules
     else
       flash[:delete]= "スケジュールを更新できませんでした"
       render "edit"
@@ -46,7 +46,7 @@ class SchedulesController < ApplicationController
     @scdl = Scdl.find(params[:id])
     @scdl.destroy
     flash[:delete]= "スケジュールを削除しました"
-    redirect_to :scdls
+    redirect_to :scedules
   end
 
 end
