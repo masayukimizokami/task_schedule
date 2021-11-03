@@ -31,12 +31,12 @@
         <tr>
           <td><%= scdl.id %></td>
           <td><%= scdl.title %></td>
-          <td><%= l scdl.start_at, format: :short %></td>
-          <td><%= l scdl.end_at, format: :short %></td>
+          <td><%= l scdl.start_day, format: :short %></td>
+          <td><%= l scdl.end_day, format: :short %></td>
           <td>
-          <% if scdl.is_all_day == true %>
+          <% if scdl.all_day == true %>
           ○
-          <% else scdl .is_all_day == false %>
+          <% else scdl .all_day == false %>
           <% end %>
           </td>
           <td><%=  l scdl.updated_at %></td>
