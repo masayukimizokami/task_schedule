@@ -40,14 +40,14 @@
           <% end %>
           </td>
           <td><%=  l scdl.updated_at %></td>
-          <td><%= link_to "確認", scdl%></td>
-          <td><%= link_to "編集", [:edit, scdl]%></td>
-          <td><%= link_to "削除", scdl, method: :delete, data: {confirm: "本当に削除しますか？"} %></td>
+          <td><%= link_to "スケジュール新規登録",new_schedule_path %></td>
+          <td><%= link_to "スケジュール新規登録",new_schedule_path %></td>
+          <td><%= link_to "スケジュール新規登録",new_schedule_path %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 
-  <p><%= link_to "スケジュール新規登録", :new_schedule_path %></p>
+  <p><%= link_to "スケジュール新規登録",new_schedule_path %></p>
 
 </div>
