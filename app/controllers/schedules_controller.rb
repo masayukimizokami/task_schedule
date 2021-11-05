@@ -10,7 +10,7 @@ class SchedulesController < ApplicationController
 
   def create
     @scdls = Scdl.new(params.require(:scdl).permit(:title, :start_day, :end_day, :all_day, :memo))
-    if @scdl.save
+    if @scdls.save
       flash[:success]= "スケジュールを登録しました"
       redirect_to :schedules
     else
